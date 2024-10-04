@@ -2,6 +2,7 @@ const eye = document.querySelector('.eye');
 const pupil = document.querySelector('.pupil');
 
 let isFar = false; // To track whether the cursor is far from the eye
+let mouseOutside = false; // To track if the mouse left the screen
 
 // Function to move the pupil randomly
 function movePupilRandomly() {
@@ -9,6 +10,7 @@ function movePupilRandomly() {
   const maxPupilMovement = 30; // How far the pupil can move
   const pupilX = Math.cos(randomAngle) * maxPupilMovement;
   const pupilY = Math.sin(randomAngle) * maxPupilMovement;
+  
   pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
 }
 
@@ -18,12 +20,15 @@ function calculateDistance(x1, y1, x2, y2) {
 }
 
 document.addEventListener('mousemove', (e) => {
+  // Reset if mouse comes back from being outside
+  mouseOutside = false;
+
   const eyeRect = eye.getBoundingClientRect();
   const eyeCenterX = eyeRect.left + eyeRect.width / 2;
   const eyeCenterY = eyeRect.top + eyeRect.height / 2;
 
   const distance = calculateDistance(eyeCenterX, eyeCenterY, e.pageX, e.pageY);
-  const distanceThreshold = 1300; // Set the threshold distance
+  const distanceThreshold = 300; // Set the threshold distance
 
   if (distance > distanceThreshold) {
     // If mouse is far from the eye, move randomly
@@ -45,9 +50,20 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
-// Set an interval for random movement when the mouse is far away
+// Detect if the mouse leaves the window and start random movement
+document.addEventListener('mouseleave', () => {
+  mouseOutside = true;
+  movePupilRandomly();
+});
+
+// Detect if the mouse enters the window and stop random movement
+document.addEventListener('mouseenter', () => {
+  mouseOutside = false;
+});
+
+// Set an interval for random movement when the mouse is far away or outside
 setInterval(() => {
-  if (isFar) {
+  if (isFar || mouseOutside) {
     movePupilRandomly();
   }
-}, 1000); // Move randomly every second
+}, 2000); // Move randomly every 2 seconds for smoother transitions
