@@ -23,7 +23,7 @@ document.addEventListener('mousemove', (e) => {
   const eyeCenterY = eyeRect.top + eyeRect.height / 2;
 
   const distance = calculateDistance(eyeCenterX, eyeCenterY, e.pageX, e.pageY);
-  const distanceThreshold = 600; // Set the threshold distance
+  const distanceThreshold = 1000; // Set the threshold distance
 
   if (distance > distanceThreshold) {
     // If mouse is far from the eye, move randomly
