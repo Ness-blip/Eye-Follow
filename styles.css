@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #902EBB;*/
+  background-image: linear-gradient(#1c1c1c,#902ebb);
+}
+
+/* .hill{
+  width: 1500px; 
+  height: 50px;
+  background-color: #902ebb;
+  border-radius: 2px solid purple;
+  position: absolute; 
+  display: flex;
+} */
+
+.eye {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pupil {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.2s ease; /* Smooth transition for pupil movement */
+}
