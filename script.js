@@ -42,7 +42,7 @@ document.addEventListener('mousemove', (e) => {
 
     const angle = Math.atan2(e.pageY - eyeCenterY, e.pageX - eyeCenterX);
 
-    const maxPupilMovement = 30; // How far the pupil can move
+    const maxPupilMovement = 90; // How far the pupil can move
     const pupilX = Math.cos(angle) * maxPupilMovement;
     const pupilY = Math.sin(angle) * maxPupilMovement;
 
