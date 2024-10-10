@@ -28,7 +28,7 @@ document.addEventListener('mousemove', (e) => {
   const eyeCenterY = eyeRect.top + eyeRect.height / 2;
 
   const distance = calculateDistance(eyeCenterX, eyeCenterY, e.pageX, e.pageY);
-  const distanceThreshold = 300; // Set the threshold distance
+  const distanceThreshold = 600; // Set the threshold distance
 
   if (distance > distanceThreshold) {
     // If mouse is far from the eye, move randomly
@@ -66,4 +66,4 @@ setInterval(() => {
   if (isFar || mouseOutside) {
     movePupilRandomly();
   }
-}, 2000); // Move randomly every 2 seconds for smoother transitions
+}, 1000); // Move randomly every 2 seconds for smoother transitions
