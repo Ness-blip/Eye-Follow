@@ -7,7 +7,7 @@ let mouseOutside = false; // To track if the mouse left the screen
 // Function to move the pupil randomly
 function movePupilRandomly() {
   const randomAngle = Math.random() * Math.PI * 2; // Random angle
-  const maxPupilMovement = 30; // How far the pupil can move
+  const maxPupilMovement = 60; // How far the pupil can move
   const pupilX = Math.cos(randomAngle) * maxPupilMovement;
   const pupilY = Math.sin(randomAngle) * maxPupilMovement;
   
