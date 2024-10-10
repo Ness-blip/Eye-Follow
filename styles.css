@@ -11,20 +11,20 @@ body {
 .eye {
   top: 100px;
   left: 20px;
-  width: 100px;
-  height: 100px;
+  width: 20vw;
+  height: 20vw;
   background-color: white;
-  border: 5px solid black;
   border-radius: 50%;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 50px 5px rgba(193, 204, 204, 0.8);
 }
 
 .pupil {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   background-color: black;
   border-radius: 50%;
   position: absolute;
@@ -32,9 +32,9 @@ body {
 }   /* Smooth transition for pupil movement */
 
 .cem {
-  position: fixed;
-  width: 1000px; 
-  bottom: -300px;
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
 }
 
 .bat1 {
@@ -57,9 +57,10 @@ body {
 }
 
 .hh {
-  position: fixed;
+  position: absolute;
   bottom: 60px; 
   right: 40px;
+  width: 40vw;
 }
 
 @keyframes flyOne {
