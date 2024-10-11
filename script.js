@@ -1,6 +1,7 @@
 const eye = document.querySelector('.eye');
 const pupil = document.querySelector('.pupil');
 const body = document.body;
+const overlay = document.querySelector('.overlay'); // Select overlay element
 
 let isFar = false; // To track whether the cursor is far from the eye
 let mouseOutside = false; // To track if the mouse left the screen
@@ -71,6 +72,7 @@ document.addEventListener('mousemove', (e) => {
       // Add dark mode and glow effect
       body.classList.add('dark-mode');
       eye.classList.add('glow');
+      overlay.classList.add('active'); // Show overlay (with transition effect)
 
       // Start jitter effect
       startJitterEffect();
@@ -78,6 +80,7 @@ document.addEventListener('mousemove', (e) => {
       // Otherwise, calculate the angle to follow the mouse
       body.classList.remove('dark-mode');
       eye.classList.remove('glow');
+      overlay.classList.remove('active'); // Hide the overlay
 
       // Stop jitter effect if active
       stopJitterEffect();
@@ -100,6 +103,7 @@ document.addEventListener('mouseleave', () => {
   // Remove glow and dark mode when mouse leaves
   body.classList.remove('dark-mode');
   eye.classList.remove('glow');
+  overlay.classList.remove('active'); // Hide the overlay
 
   // Stop jitter effect if active
   stopJitterEffect();
