@@ -10,7 +10,7 @@ body {
 
 
 body.dark-mode {
-  background-image: linear-gradient(black,black);
+  background-image: linear-gradient(black,red);
   transition: background-image 5s ease; /* Smooth transition effect */
 }
 
