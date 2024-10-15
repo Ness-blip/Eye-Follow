@@ -119,4 +119,4 @@ setInterval(() => {
   if (isFar || mouseOutside) {
     movePupilRandomly();
   }
-}, 1000); // Move randomly every 1 second for smoother transitions
+}, 7000); // Move randomly every 1 second for smoother transitions
